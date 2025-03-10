@@ -1,256 +1,910 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samava Farms</title>
-    <link rel="icon" type="image/x-icon" href="../hotel/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" media="screen and (max-width: 850px)" href="styles/handset_index.css">
-    <link rel="stylesheet" media="screen and (max-width: 650px)" href="styles/hamburger-menu.css">
-
+    <title>Samava Farms - A Serene Retreat in Calicut</title>
+    <style>
+        :root {
+            --primary-color: #7b3f00;
+            --secondary-color: #e8e1d9;
+            --accent-color: #b87333;
+            --text-color: #333;
+            --light-text: #fff;
+            --border-radius: 4px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--secondary-color);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--secondary-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .book-now {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .book-now:hover {
+            background-color: var(--accent-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-text);
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .hero h1.arabic {
+            font-family: 'Arial', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--light-text);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--light-text);
+            color: var(--primary-color);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--accent-color);
+            bottom: 0;
+            left: 25%;
+        }
+        
+        /* Gallery Styles */
+        .gallery {
+            margin-bottom: 40px;
+        }
+        
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .gallery-item {
+            height: 200px;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .about-text {
+            max-width: 800px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        /* Experience Section */
+        .experience {
+            background-color: #f9f5f0;
+        }
+        
+        .experience-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            background-color: var(--light-text);
+            border-radius: var(--border-radius);
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* Accommodation Section */
+        .accommodation {
+            background-color: var(--secondary-color);
+        }
+        
+        .accommodation-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        .room-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+        
+        .room-card {
+            background-color: var(--light-text);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .room-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .room-details {
+            padding: 20px;
+        }
+        
+        .room-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .room-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .room-features li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .room-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        
+        .room-cta {
+            text-align: center;
+        }
+        
+        /* Location Section */
+        .location {
+            background-color: #f9f5f0;
+        }
+        
+        .location-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .location-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .location-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .location-description {
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--secondary-color);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .contact-form {
+            background-color: var(--light-text);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-submit:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .whatsapp-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+            background-color: #25D366;
+            color: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .whatsapp-cta:hover {
+            background-color: #128C7E;
+        }
+        
+        .whatsapp-icon {
+            margin-right: 10px;
+            font-size: 24px;
+        }
+        
+        .contact-info {
+            padding: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-right: 15px;
+            min-width: 24px;
+        }
+        
+        .business-hours {
+            margin-top: 30px;
+        }
+        
+        .business-hours h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .footer-description {
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .footer-social {
+            display: flex;
+        }
+        
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .footer-links h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 20px;
+            }
+            
+            .nav-links li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero h1.arabic {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .gallery-container {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 10px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 5px 8px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero h1.arabic {
+                font-size: 1.6rem;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+            }
+            
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
-
 <body>
-    <!-- Navbar -->
-    <div class="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
-    <div class="frontpage">
-
-        <div class="navbar">
-
-            <div id="logo1">
-
-                <img src="socials/logo.png" alt="">
-            </div>
-            <ul id="navbarmain">
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="#about">About</a>
-                </li>
-                <li>
-                    <a href="#kitchen">Kitchen</a>
-                </li>
-                <li>
-                    <a href="#rooms">Rooms</a>
-                </li>
-                <li>
-                    <a href="#contact">Contact Us</a>
-                </li>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">Samava Farms</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#accommodation">Accommodation</a></li>
+                <li><a href="#location">Location</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-
-
-            <div class="social">
-
-                <ul>
-                    <li>
-                        <a href="https://www.facebook.com/profile.php?id=100076243074598" target="_blank">
-
-                            <img src="socials/fb.png" alt="" id="fb">
-                        </a>
-
-
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/pooranjoyz_.ig/" target="_blank">
-
-
-                            <img src="socials/ig.png" alt="" id="ig">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/in/pooranjoy-bhattacharya-baa23721a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B6TjHse3sTvqtMyPLyupHBQ%3D%3D" target="_blank">
-
-                            <img src="socials/lnkd.png" alt="" id="lnkd">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/pooranjoyb" target="_blank">
-
-                            <img src="socials/git.png" alt="" id="git">
-                        </a>
-                    </li>
-                </ul>
-
-            </div>
-
-
+            <a href="https://api.whatsapp.com/send?phone=919744800088&text=im%20interested" class="book-now">Book Now</a>
         </div>
-        <!-- Frontpage -->
-        <div class="content">
-            Welcome to Samava Farms!
-            <br>
-            <div id="contentsum1">
+    </header>
 
-                A Serene Retreat in the Hills of Calicut
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="arabic">مرحبا بكم في سماوى فامس</h1>
+            <h1>Welcome to Samava Farms</h1>
+            <p>A Serene Retreat in the Hills of Calicut</p>
+            <div class="hero-buttons">
+                <a href="https://api.whatsapp.com/send?phone=919744800088&text=im%20interested" class="btn">Book Your Stay</a>
+                <a href="#experience" class="btn btn-outline">Explore More</a>
             </div>
         </div>
+    </section>
 
-    </div>
-    <!-- Kitchen -->
-    <div class="kitchen" id="kitchen">
-        <div id="sum1">What would you like us to prepare for you?</div>
-        <div id="intro">Our Kitchen</div>
-        <div id="sum2">
-
-            Taste the best of Town with the food that awaits you
-        </div>
-
-        <div class="foodbox">
-            <div class="foodcolumn">
-
-                <div><img src="kitchen/food-3.jpg" alt="">
-                    <div class="fooddesc">
-                        Italian Coffee
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+            </div>
+            
+            <!-- Gallery -->
+            <div class="gallery">
+                <div class="gallery-container">
+                    <!-- Placeholder for 8 gallery images from ./img folder -->
+                    <div class="gallery-item">
+                        <img src="./img/photo1.jpg" alt="Samava Farms">
                     </div>
-                </div>
-                <div><img src="kitchen/food-4.jpg" alt="">
-                    <div class="fooddesc">Fish curry with Japanese rice
+                    <div class="gallery-item">
+                        <img src="./img/photo2.jpg" alt="Samava Farms">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./img/photo3.jpg" alt="Samava Farms">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./img/photo4.jpg" alt="Samava Farms">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./img/photo5.jpg" alt="Samava Farms">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./img/photo6.jpg" alt="Samava Farms">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./img/photo7.jpg" alt="Samava Farms">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./img/photo8.jpg" alt="Samava Farms">
                     </div>
                 </div>
             </div>
-            <div class="foodcolumn">
-                <div><img src="kitchen/food-5.jpg" alt="">
-                    <div class="fooddesc">
-                        Cheese Salad with Tea
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Perched on a peaceful hilltop in Calicut, Samava Farms is a little slice of paradise wrapped in nature's embrace. The name "Samava" means peace and serenity—exactly what you'll feel the moment you step in.</p>
+                    <p>This cozy retreat is surrounded by lush greenery, crisp mountain air, and breathtaking views. Within the property, you'll find a charming farm and a small plantation garden, adding to the natural charm.</p>
+                    <p>Looking for a movie night with family or friends? The upstairs space is perfect! It's a cozy spot with an Arabic Majlis, where you can sink into soft cushions, watch a film, or lose yourself in a good book.</p>
+                    <p>But the real magic? Sunrise. From the terrace, you get a breathtaking view of Calicut Beach in the distance, bathed in golden light. A moment worth waking up for.</p>
+                    <p>Samava Farms isn't just a stay; it's an experience. A place to unwind, reconnect, and soak in nature's beauty. 🌿✨</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Experience</h2>
+            </div>
+            <div class="experience-content">
+                <p>At Samava Farms, we offer luxurious living blended with the charm of nature. Our three-floor villa is adorned with Moroccan-inspired interiors, making it an ideal location for photoshoots.</p>
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <div class="feature-icon">🌬️</div>
+                        <h3>Wind & Weather</h3>
+                        <p>The mountain breeze is a unique experience, making this an enchanting stay.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏰</div>
+                        <h3>Upstairs Event Hall</h3>
+                        <p>Ideal for family gatherings, musical evenings, Ghazals, and dance practices.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Total Privacy</h3>
+                        <p>With no neighboring properties, you'll experience undisturbed peace.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>24/7 Security & Assistance</h3>
+                        <p>A dedicated person will be present on the property round the clock.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎁</div>
+                        <h3>Welcome Perks</h3>
+                        <p>Enjoy fresh-cut fruits and complimentary mineral water upon arrival.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌱</div>
+                        <h3>Sustainability</h3>
+                        <p>We're dedicated to preserving the environment, greenery and sustainable practices.</p>
                     </div>
                 </div>
-                <div><img src="kitchen/food-6.jpg" alt="">
-                    <div class="fooddesc">
-                        Bun with coconut pudding
+            </div>
+        </div>
+    </section>
+
+    <!-- Accommodation Section -->
+    <section id="accommodation" class="accommodation">
+        <div class="container">
+            <div class="section-title">
+                <h2>Accommodation & Amenities</h2>
+            </div>
+            <div class="accommodation-intro">
+                <p>Make yourself at home with us.</p>
+            </div>
+            <div class="room-cards">
+                <div class="room-card">
+                    <img src="./f1.jpg" alt="Standard Room" class="room-img">
+                    <div class="room-details">
+                        <h3 class="room-title">Standard Room</h3>
+                        <ul class="room-features">
+                            <li>1 Double Bed or 2 Twin Beds</li>
+                            <li>Two bedside tables, a desk, and a chair</li>
+                            <li>Elegantly furnished with wall-to-wall carpeting and stylish interiors</li>
+                            <li>Modern amenities including air conditioning and high-speed WiFi</li>
+                            <li>Private balcony to enjoy the stunning mountain scenery</li>
+                        </ul>
+                        <div class="room-cta">
+                            <a href="https://api.whatsapp.com/send?phone=919744800088&text=im%20interested" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <img src="./f2.jpg" alt="Moroccan-Inspired Bathroom" class="room-img">
+                    <div class="room-details">
+                        <h3 class="room-title">Classic & Spacious Moroccan-Inspired Room</h3>
+                        <ul class="room-features">
+                            <li>Elegant Moroccan interiors with intricate details</li>
+                            <li>Luxurious fixtures and premium toiletries</li>
+                            <li>Spacious shower area with rainfall showerhead</li>
+                            <li>Timeless charm with modern conveniences</li>
+                        </ul>
+                        <div class="room-cta">
+                            <a href="https://api.whatsapp.com/send?phone=919744800088&text=im%20interested" class="btn">Book Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="foodcolumn">
-                <div><img src="kitchen/food-7.jpg" alt="">
-                    <div class="fooddesc">
-                        Boiled Egg & Fries
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="location">
+        <div class="container">
+            <div class="section-title">
+                <h2>Location & Accessibility</h2>
+            </div>
+            <div class="location-content">
+                <div class="location-item">
+                    <div class="location-number">10 km</div>
+                    <p class="location-description">from Calicut town – A short and scenic drive from the heart of the city.</p>
+                </div>
+                <div class="location-item">
+                    <div class="location-number">35 km</div>
+                    <p class="location-description">from Calicut International Airport – Easily accessible for domestic and international travelers.</p>
+                </div>
+                <div class="location-item">
+                    <div class="location-number">Perfect</div>
+                    <p class="location-description">for a quick getaway in Kerala – Whether you live nearby or are visiting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="contact-container">
+
+
+                <div class="contact-form">
+                    <h3>Send us a message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name*</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message*</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                    </form>
+                
+                    <!-- WhatsApp CTA Button -->
+                    <a id="whatsapp-link" href="#" class="whatsapp-cta">
+                        <span class="whatsapp-icon">📱</span>
+                        Send Message
+                    </a>
+                </div>
+                
+                <script>
+                    document.getElementById('whatsapp-link').addEventListener('click', function (event) {
+                        event.preventDefault();
+                        var name = encodeURIComponent(document.getElementById('name').value.trim());
+                        var message = encodeURIComponent(document.getElementById('message').value.trim());
+                
+                        if (name && message) {
+                            var whatsappURL = `https://api.whatsapp.com/send?phone=919744800088&text=Hello, my name is ${name}. ${message}`;
+                            window.location.href = whatsappURL;
+                        } else {
+                            alert("Please fill in both fields before sending.");
+                        }
+                    });
+                </script>
+                
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Address:</h4>
+                            <p>Parambil Bazar, Chalithazham Kakkad Mala, 673611, Calicut, Kerala</p>
+                            <p><a href="https://goo.gl/maps/5VEgzD8bcR77PjhK6" target="_blank" style="color: var(--primary-color);">View on Google Maps</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Phone:</h4>
+                            <p>+91 97448 00088</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h4>Email:</h4>
+                            <p>samavafarms@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <h4>Instagram:</h4>
+                            <p><a href="https://www.instagram.com/samavafarms" target="_blank" style="color: var(--primary-color);">@samavafarms</a></p>
+                        </div>
+                    </div>
+                    <div class="business-hours">
+                        <h3>Business Hours</h3>
+                        <p>Open 24/7 for inquiries and bookings</p>
+                        <p>Check-in: 2:00 PM | Check-out: 12:00 PM</p>
                     </div>
                 </div>
-                <div><img src="kitchen/food-8.jpg" alt="">
-                    <div class="fooddesc">
-                        Rice and fried Eggplant
-                    </div>
-                </div>
-            </div>
-
-
-
-
-        </div>
-    </div>
-    <div class="rooms" id="rooms">
-        <div id="rsum1">How would you like to stay with us?</div>
-        <div id="rintro">Our Rooms</div>
-        <div id="rsum2">
-
-            Luxury is not a place, it's an experience.
-        </div>
-        <div class="roomspic" id="r1"><img src="rooms/1.jpg" alt="">
-            <div class="rdesc">
-                Enjoy our elegant 40 m² guest rooms, designed in warm beige tones and tailored to the needs of private and business travelers alike. <br> All rooms have a large marble bathroom, a double bed, air conditioning, an additional work area with
-                free internet access and a walk-in closet. Our superior rooms impress with a wonderful view of the city and the adjacent park. <br><br> Additional services: 24 hour room service Bathrobe, slippers Daily newspaper on request
-                <br>
-                <br> Welcome gifts: Fruit basket 1 bottle of mineral water Coffee and tea
-                <div class="btn">
-                    <button>Book Now</button>
-                </div>
-
             </div>
         </div>
-        <div class="roomspic" id="r2"><img src="rooms/2.jpg" alt="">
-            <div class="rdesc" id="rdesc1">
-                This is a one-room suite with queen-size bed and comfortable seating area. It is located downstairs with an outside entrance and is wheelchair assessable. It has a 39-inch flat screen TV and electric fireplace. <br><br> The butler kitchen
-                (refrigerator, microwave, Keurig coffee brewer are provided). Coffee, tea and amenities are supplied. The large bathroom has a 60-inch shower (no tub). Luxury hotels in the 1900s provided sample rooms for traveling salesmen to display
-                their wares. <br><br> Remember transportation was either by train or horse & buggy.
+    </section>
 
-
-                <div class="btn">
-                    <button>Book Now</button>
-                </div>
-
-            </div>
-        </div>
-        <div id="r3" class="roomspic"><img src="rooms/3.jpg" alt="">
-            <div class="rdesc">
-                Our Deluxe Twin/Large Double also provides views over landscaped gardens. It has a seating area, digital safe and mini fridge. This room can be configured with either 2 single beds or zip and linked to provide a large double bed. <br><br>                As our smallest budget rooms, these Compact bedrooms are suited for single occupancy or short-stay double occupancy as they have limited space and storage. <br> <br> It has ample storage, a seating area, digital safe and mini fridge.
-                <div class="btn">
-                    <button>Book Now</button>
-                </div>
-
-            </div>
-        </div>
-        <div class="roomspic" id="r4"><img src="rooms/4.jpg" alt="">
-            <div class="rdesc">
-                The Standard Room comprises of 1 Double Bed or 2 Twin Beds, 2 Bedside Tables, a Desk & Chair. The room is furnished with wall to wall carpeting, trendy furnishings and a balcony. <br><br> Our ultramodern glass bathroom is equipped with
-                hairdryer, magnifying shaving and make up mirror as well as all the amenities you could possible need during your stay. <br><br> A Complimentary Bottle of Wine, Fresh Fruit and Mineral Water, are provided on arrival. Electric current:
-                220 Volts. Smoking rooms & inter-connecting rooms are also available.
-                <div class="btn">
-                    <button>Book Now</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- About  -->
-    <div class="about" id="about">
-        <div id="asum1">Our brief history</div>
-        <div id="aintro">About Us</div>
-        <div id="asum2">
-
-            Explore your destination with us. A great adventure begins here.
-        </div>
-        <div class="aboutpic" id="r3"><img src="img/about.jpg" alt="">
-            <div class="adesc">
-                Named after “Samava,” which embodies peace and serenity, our farm is a mountaintop retreat designed to offer a tranquil and rejuvenating experience. Nestled in a serene hilltop in Calicut, this farm property is a natural bliss, surrounded by lush greenery, fresh mountain air, and breathtaking views. Whether you seek a peaceful escape, a family gathering, or a private celebration, Samava Farms is your perfect destination.
-                <div class="btn">
-                    <a href="about.html" target="_blank"><button id="aboutbtn">Explore us</button></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Contact Us  -->
-    <div class="contact" id="contact">
-        <div id="csum1">We are available 24 X 7</div>
-        <div id="cintro">Contact Us</div>
-        <div id="csum2">
-
-            Any questions or remarks? Let's start a conversation
-        </div>
-    </div>
-    <div class="contdata" id="c3">
-        <div id="form" >
-            <form type="post" id="myform" action="#">
-                <div id="fname"><label for="name">Name :&nbsp; <input type="text" name="uname" id="name" placeholder="Enter Your Name" required></label></div>
-                <div id="fmail"><label for="email">Email :&nbsp;&nbsp; <input type="text" name="umail" id="email" placeholder="Enter your email" required></label></div>
-                <div id="fphone"><label for="phone">Phone : <input type="number" name="uphone" id="phone" placeholder="Enter your Phone" required></label></div>
-                <div id="fissue"><label for="issue">Issue : &nbsp;&nbsp;&nbsp;<textarea name="uissue" id="issue" placeholder="Type your Issue here"></textarea></label></div>
-                <div id="submit" class="btn">
-                    <button id="btnSubmit" type="submit" value="submit">Submit 
-                    </button>
-                </div>
-            </form>
-        </div>
-        <div class="cdesc">
-            Our team is available all over the metropolitan cities like Kolkata, London, New York, California, Islamabad, Dhaka, Moscow, New Delhi, Guwahati, Dubai, Casino. You can reach us using +141 235-786 or you can mail us at palace@imperialmail.com
-
-        </div>
-
-    </div>
+    <!-- Footer -->
     <footer>
-        Copyright &copy; pooranjoyb/Hotel_ImperialPalace All rights reserved.
-    </footer>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="app.js"></script>
-</body>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <div class="footer-logo">Samava Farms</div>
+                    <p class="footer-description">A serene retreat in the hills of Calicut, offering peace and serenity. Nature's getaway.</p>
+                    
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/samavafarms" class="social-icon" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="24" height="24">
+                        </a>
+                        <a href="https://api.whatsapp.com/send?phone=919744800088" class="social-icon" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" width="24" height="24">
+                        </a>
+                        <a href="tel:+919744800088" class="social-icon">
+                            <span>📞</span>
+                        </a>
+                    </div>
 
-</html>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#accommodation">Accommodation</a></li>
+                        <li><a href="#
