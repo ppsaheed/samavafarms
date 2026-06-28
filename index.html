@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,70 +14,70 @@
             --light-text: #fff;
             --border-radius: 4px;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
             color: var(--text-color);
             line-height: 1.6;
             background-color: var(--secondary-color);
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Header Styles */
         header {
             background-color: var(--secondary-color);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
             z-index: 1000;
         }
-        
+
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 20px;
         }
-        
+
         .logo {
             font-size: 24px;
             font-weight: 700;
             color: var(--primary-color);
             text-decoration: none;
         }
-        
+
         .nav-links {
             display: flex;
             list-style: none;
         }
-        
+
         .nav-links li {
             margin-left: 30px;
         }
-        
+
         .nav-links a {
             text-decoration: none;
             color: var(--text-color);
             font-weight: 500;
             transition: color 0.3s;
         }
-        
+
         .nav-links a:hover {
             color: var(--accent-color);
         }
-        
+
         .book-now {
             background-color: var(--primary-color);
             color: var(--light-text);
@@ -86,15 +87,15 @@
             text-decoration: none;
             transition: background-color 0.3s;
         }
-        
+
         .book-now:hover {
             background-color: var(--accent-color);
         }
-        
+
         /* Hero Section */
         .hero {
             height: 100vh;
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./hero.jpg');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./hero.jpg');
             background-size: cover;
             background-position: center;
             color: var(--light-text);
@@ -102,28 +103,28 @@
             align-items: center;
             text-align: center;
         }
-        
+
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .hero h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
         }
-        
+
         .hero h1.arabic {
             font-family: 'Arial', sans-serif;
             font-size: 2.2rem;
             margin-bottom: 20px;
         }
-        
+
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 30px;
         }
-        
+
         .btn {
             display: inline-block;
             padding: 12px 30px;
@@ -135,32 +136,32 @@
             margin: 0 10px;
             transition: all 0.3s;
         }
-        
+
         .btn:hover {
             background-color: var(--accent-color);
             transform: translateY(-3px);
         }
-        
+
         .btn-outline {
             background-color: transparent;
             border: 2px solid var(--light-text);
         }
-        
+
         .btn-outline:hover {
             background-color: var(--light-text);
             color: var(--primary-color);
         }
-        
+
         /* Section Styles */
         section {
             padding: 80px 0;
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 60px;
         }
-        
+
         .section-title h2 {
             font-size: 2rem;
             color: var(--primary-color);
@@ -168,7 +169,7 @@
             display: inline-block;
             padding-bottom: 10px;
         }
-        
+
         .section-title h2::after {
             content: "";
             position: absolute;
@@ -178,212 +179,212 @@
             bottom: 0;
             left: 25%;
         }
-        
+
         /* Gallery Styles */
         .gallery {
             margin-bottom: 40px;
         }
-        
+
         .gallery-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 15px;
             margin-bottom: 30px;
         }
-        
+
         .gallery-item {
             height: 200px;
             overflow: hidden;
             border-radius: var(--border-radius);
             position: relative;
         }
-        
+
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s;
         }
-        
+
         .gallery-item:hover img {
             transform: scale(1.05);
         }
-        
+
         .about-content {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        
+
         .about-text {
             max-width: 800px;
             text-align: center;
             margin-bottom: 40px;
         }
-        
+
         .about-text p {
             margin-bottom: 20px;
         }
-        
+
         /* Experience Section */
         .experience {
             background-color: #f9f5f0;
         }
-        
+
         .experience-content {
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .feature-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             margin-top: 50px;
         }
-        
+
         .feature-card {
             background-color: var(--light-text);
             border-radius: var(--border-radius);
             padding: 30px 20px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
-        
+
         .feature-card:hover {
             transform: translateY(-10px);
         }
-        
+
         .feature-icon {
             font-size: 40px;
             color: var(--primary-color);
             margin-bottom: 20px;
         }
-        
+
         .feature-card h3 {
             margin-bottom: 15px;
             color: var(--primary-color);
         }
-        
+
         /* Accommodation Section */
         .accommodation {
             background-color: var(--secondary-color);
         }
-        
+
         .accommodation-intro {
             text-align: center;
             max-width: 800px;
             margin: 0 auto 40px;
         }
-        
+
         .room-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 30px;
         }
-        
+
         .room-card {
             background-color: var(--light-text);
             border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .room-img {
             height: 250px;
             width: 100%;
             object-fit: cover;
         }
-        
+
         .room-details {
             padding: 20px;
         }
-        
+
         .room-title {
             font-size: 1.5rem;
             color: var(--primary-color);
             margin-bottom: 15px;
         }
-        
+
         .room-features {
             list-style: none;
             margin-bottom: 20px;
         }
-        
+
         .room-features li {
             position: relative;
             padding-left: 25px;
             margin-bottom: 10px;
         }
-        
+
         .room-features li::before {
             content: "✓";
             position: absolute;
             left: 0;
             color: var(--accent-color);
         }
-        
+
         .room-cta {
             text-align: center;
         }
-        
+
         /* Location Section */
         .location {
             background-color: #f9f5f0;
         }
-        
+
         .location-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        
+
         .location-item {
             text-align: center;
             padding: 20px;
         }
-        
+
         .location-number {
             font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary-color);
             margin-bottom: 10px;
         }
-        
+
         .location-description {
             font-size: 0.9rem;
         }
-        
+
         /* Contact Section */
         .contact {
             background-color: var(--secondary-color);
         }
-        
+
         .contact-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
         }
-        
+
         .contact-form {
             background-color: var(--light-text);
             padding: 30px;
             border-radius: var(--border-radius);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .form-group {
             margin-bottom: 20px;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 5px;
             font-weight: 500;
         }
-        
+
         .form-control {
             width: 100%;
             padding: 12px;
@@ -391,12 +392,12 @@
             border-radius: var(--border-radius);
             font-size: 1rem;
         }
-        
+
         textarea.form-control {
             height: 120px;
             resize: vertical;
         }
-        
+
         .btn-submit {
             width: 100%;
             padding: 12px;
@@ -409,11 +410,11 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-        
+
         .btn-submit:hover {
             background-color: var(--accent-color);
         }
-        
+
         .whatsapp-cta {
             display: flex;
             align-items: center;
@@ -427,76 +428,76 @@
             font-weight: 500;
             transition: background-color 0.3s;
         }
-        
+
         .whatsapp-cta:hover {
             background-color: #128C7E;
         }
-        
+
         .whatsapp-icon {
             margin-right: 10px;
             font-size: 24px;
         }
-        
+
         .contact-info {
             padding: 20px;
         }
-        
+
         .contact-item {
             display: flex;
             align-items: flex-start;
             margin-bottom: 20px;
         }
-        
+
         .contact-icon {
             font-size: 24px;
             color: var(--primary-color);
             margin-right: 15px;
             min-width: 24px;
         }
-        
+
         .business-hours {
             margin-top: 30px;
         }
-        
+
         .business-hours h3 {
             color: var(--primary-color);
             margin-bottom: 15px;
         }
-        
+
         /* Footer */
         footer {
             background-color: var(--primary-color);
             color: var(--light-text);
             padding: 50px 0 20px;
         }
-        
+
         .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin-bottom: 30px;
         }
-        
+
         .footer-logo {
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 15px;
         }
-        
+
         .footer-description {
             margin-bottom: 20px;
             font-size: 0.9rem;
             line-height: 1.6;
         }
-        
+
         .footer-social {
             display: flex;
         }
-        
+
         .social-icon {
             width: 36px;
             height: 36px;
-            background-color: rgba(255,255,255,0.1);
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -504,106 +505,107 @@
             margin-right: 10px;
             transition: background-color 0.3s;
         }
-        
+
         .social-icon:hover {
             background-color: var(--accent-color);
         }
-        
+
         .footer-links h3 {
             margin-bottom: 20px;
             font-size: 1.2rem;
         }
-        
+
         .footer-links ul {
             list-style: none;
         }
-        
+
         .footer-links li {
             margin-bottom: 10px;
         }
-        
+
         .footer-links a {
             color: var(--light-text);
             text-decoration: none;
             transition: color 0.3s;
         }
-        
+
         .footer-links a:hover {
             color: var(--accent-color);
         }
-        
+
         .copyright {
             text-align: center;
             padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.9rem;
         }
-        
+
         /* Media Queries */
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
             }
-            
+
             .nav-links {
                 margin-top: 20px;
             }
-            
+
             .nav-links li {
                 margin: 0 10px;
             }
-            
+
             .hero h1 {
                 font-size: 2rem;
             }
-            
+
             .hero h1.arabic {
                 font-size: 1.8rem;
             }
-            
+
             .section-title h2 {
                 font-size: 1.8rem;
             }
-            
+
             .gallery-container {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
         }
-        
+
         @media (max-width: 480px) {
             .header-container {
                 padding: 10px;
             }
-            
+
             .nav-links {
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            
+
             .nav-links li {
                 margin: 5px 8px;
             }
-            
+
             .hero h1 {
                 font-size: 1.8rem;
             }
-            
+
             .hero h1.arabic {
                 font-size: 1.6rem;
             }
-            
+
             .btn {
                 display: block;
                 width: 100%;
                 margin: 10px 0;
             }
-            
+
             .gallery-container {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header>
@@ -616,7 +618,8 @@
                 <li><a href="#location">Location</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="https://api.whatsapp.com/send?phone=919744800088&text=im%20interested" class="book-now">Book Now</a>
+            <a href="https://api.whatsapp.com/send?phone=919745298193&text=im%20interested" class="book-now">Book
+                Now</a>
         </div>
     </header>
 
@@ -625,9 +628,10 @@
         <div class="hero-content">
             <h1 class="arabic">مرحبا بكم في سماوى فامس</h1>
             <h1>Welcome to Samava Farms</h1>
-            <p>A Serene Retreat in the Hills of Calicut</p>
+            <p>A Serene Retreat in the Hills of Calicut - Samava Farms – Hilltop Stay (12 km from Calicut)</p>
             <div class="hero-buttons">
-                <a href="https://api.whatsapp.com/send?phone=919744800088&text=im%20interested" class="btn">Book Your Stay</a>
+                <a href="https://api.whatsapp.com/send?phone=919745298193&text=im%20interested" class="btn">Book Your
+                    Stay</a>
                 <a href="#experience" class="btn btn-outline">Explore More</a>
             </div>
         </div>
@@ -639,225 +643,270 @@
             <div class="section-title">
                 <h2>About Us</h2>
             </div>
-            
-            <!-- Gallery -->
-    <div class="gallery">
-        <div class="gallery-container">
 
-            <div class="gallery-item">
-                <img src="img/Suvira/IMG_1007_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Suvira/IMG_1018_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Suvira/IMG_1023_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Suvira/DSC01279_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Suvira/IMG_1013_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Suvira/DSC00684_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Suvira/DSC00678_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Suvira/DSC01427_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Suvira/DSC01431_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Suvira/new_afis/IMG_1084_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Suvira/new_afis/13b0273f-adae-4ef7-a9ad-932284e5ecd2_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha_toilet/DSC01420_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha_toilet/DSC01406_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha_toilet/DSC01408_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha_toilet/DSC01424_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha_toilet/new_afis/IMG_0985_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha_toilet/new_afis/IMG_1076_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha_toilet/new_afis/IMG_0976_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Deewan/DSC01329_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Deewan/DSC00645_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Deewan/DSC00633_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Deewan/DSC01326_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Deewan/DSC01327_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Suvira_toilet/IMG_0995_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Suvira_toilet/DSC01358_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Suvira_toilet/DSC01287_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Suvira_toilet/DSC01351_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Deewan/new_afis/IMG_1047_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Deewan/new_afis/IMG_1056_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Deewan/new_afis/IMG_1029_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha/IMG_1123_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha/IMG_1094_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha/IMG_0967(1)_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha/DSC01395_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha/IMG_0958 2_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha/IMG_1063_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha/DSC00592_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha/DSC01384_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha/IMG_1064_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha/DSC00561_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha/IMG_1087 2_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha/IMG_1033_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha/new_afis/IMG_1142_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha/new_afis/IMG_1178_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha/new_afis/IMG_1021_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha/new_afis/IMG_1071_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha/new_afis/IMG_0992_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha/new_afis/IMG_1004_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha/new_afis/IMG_1145_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Marrakech_Mazha/new_afis/IMG_0999_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Outside_view_and_entire_property/DSC00523_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Outside_view_and_entire_property/DSC01229_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Outside_view_and_entire_property/DSC01249_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Outside_view_and_entire_property/DSC00655_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Outside_view_and_entire_property/DSC00533_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Outside_view_and_entire_property/IMG_1154_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Outside_view_and_entire_property/DSC01342_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Outside_view_and_entire_property/DSC00648_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Outside_view_and_entire_property/DSC01302_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Outside_view_and_entire_property/new_afis/IMG_1124_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Outside_view_and_entire_property/new_afis/IMG_1094_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Outside_view_and_entire_property/new_afis/IMG_1117_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Outside_view_and_entire_property/new_afis/IMG_1096_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Outside_view_and_entire_property/new_afis/IMG_1112_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Outside_view_and_entire_property/new_afis/IMG_1105_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Outside_view_and_entire_property/new_afis/IMG_1101_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Outside_view_and_entire_property/new_afis/IMG_1066_opt.jpg" alt="Gallery Image">
-            </div>
-            <div class="gallery-item">
-                <img src="img/Outside_view_and_entire_property/new_afis/IMG_1168_opt.jpg" alt="Gallery Image">
-            </div>
-        </div>
-    </div>
-            
+            <!-- Gallery -->
+            <div class="gallery">
+                <div class="gallery-container">
+
+                    <div class="gallery-item">
+                        <img src="img/img_up_28th/1.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/img_up_28th/2.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/img_up_28th/3.jpeg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/img_up_28th/3.png" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/img_up_28th/3A.JPG" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/img_up_28th/3B.JPG" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/img_up_28th/4.jpeg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/img_up_28th/5.jpeg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/img_up_28th/6.jpeg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/img_up_28th/7.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/img_up_28th/8.JPG" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/img_up_28th/9.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/img_up_28th/10.jpeg" alt="Gallery Image">
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="img/Suvira/IMG_1018_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Suvira/IMG_1023_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Suvira/DSC01279_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Suvira/IMG_1013_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Suvira/DSC00684_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Suvira/DSC00678_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Suvira/DSC01427_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Suvira/DSC01431_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Suvira/new_afis/IMG_1084_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Suvira/new_afis/13b0273f-adae-4ef7-a9ad-932284e5ecd2_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha_toilet/DSC01420_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha_toilet/DSC01406_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha_toilet/DSC01408_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha_toilet/DSC01424_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha_toilet/new_afis/IMG_0985_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha_toilet/new_afis/IMG_1076_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha_toilet/new_afis/IMG_0976_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Deewan/DSC01329_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Deewan/DSC00645_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Deewan/DSC00633_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Deewan/DSC01326_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Deewan/DSC01327_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Suvira_toilet/IMG_0995_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Suvira_toilet/DSC01358_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Suvira_toilet/DSC01287_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Suvira_toilet/DSC01351_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Deewan/new_afis/IMG_1047_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Deewan/new_afis/IMG_1056_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Deewan/new_afis/IMG_1029_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha/IMG_1123_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha/IMG_1094_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha/IMG_0967(1)_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha/DSC01395_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha/IMG_0958 2_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha/IMG_1063_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha/DSC00592_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha/DSC01384_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha/IMG_1064_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha/DSC00561_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha/IMG_1087 2_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha/IMG_1033_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha/new_afis/IMG_1142_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha/new_afis/IMG_1178_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha/new_afis/IMG_1021_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha/new_afis/IMG_1071_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha/new_afis/IMG_0992_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha/new_afis/IMG_1004_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha/new_afis/IMG_1145_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Marrakech_Mazha/new_afis/IMG_0999_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Outside_view_and_entire_property/DSC00523_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Outside_view_and_entire_property/DSC01229_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Outside_view_and_entire_property/DSC01249_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Outside_view_and_entire_property/DSC00655_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Outside_view_and_entire_property/DSC00533_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Outside_view_and_entire_property/IMG_1154_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Outside_view_and_entire_property/DSC01342_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Outside_view_and_entire_property/DSC00648_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Outside_view_and_entire_property/DSC01302_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Outside_view_and_entire_property/new_afis/IMG_1124_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Outside_view_and_entire_property/new_afis/IMG_1094_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Outside_view_and_entire_property/new_afis/IMG_1117_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Outside_view_and_entire_property/new_afis/IMG_1096_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Outside_view_and_entire_property/new_afis/IMG_1112_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Outside_view_and_entire_property/new_afis/IMG_1105_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Outside_view_and_entire_property/new_afis/IMG_1101_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Outside_view_and_entire_property/new_afis/IMG_1066_opt.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Outside_view_and_entire_property/new_afis/IMG_1168_opt.jpg" alt="Gallery Image">
+                    </div>
+                </div>
+            </div>
+
             <div class="about-content">
                 <div class="about-text">
-                    <p>Perched on a peaceful hilltop in Calicut, Samava Farms is a little slice of paradise wrapped in nature's embrace. The name "Samava" means peace and serenity—exactly what you'll feel the moment you step in.</p>
-                    <p>This cozy retreat is surrounded by lush greenery, crisp mountain air, and breathtaking views. Within the property, you'll find a charming farm and a small plantation garden, adding to the natural charm.</p>
-                    <p>Looking for a movie night with family or friends? The upstairs space is perfect! It's a cozy spot with an Arabic Majlis, where you can sink into soft cushions, watch a film, or lose yourself in a good book.</p>
-                    <p>But the real magic? Sunrise. From the terrace, you get a breathtaking view of Calicut Beach in the distance, bathed in golden light. A moment worth waking up for.</p>
-                    <p>Samava Farms isn't just a stay; it's an experience. A place to unwind, reconnect, and soak in nature's beauty. 🌿✨</p>
+                    <p>Perched on a peaceful hilltop in Calicut, Samava Farms is a little slice of paradise wrapped in
+                        nature's embrace. The name "Samava" means peace and serenity—exactly what you'll feel the moment
+                        you step in.</p>
+                    <p>This cozy retreat is surrounded by lush greenery, crisp mountain air, and breathtaking views.
+                        Within the property, you'll find a charming farm and a small plantation garden, adding to the
+                        natural charm.</p>
+                    <p>Looking for a movie night with family or friends? The upstairs space is perfect! It's a cozy spot
+                        with an Arabic Majlis, where you can sink into soft cushions, watch a film, or lose yourself in
+                        a good book.</p>
+                    <p>But the real magic? Sunrise. From the terrace, you get a breathtaking view of Calicut Beach in
+                        the distance, bathed in golden light. A moment worth waking up for.</p>
+                    <p>Samava Farms isn't just a stay; it's an experience. A place to unwind, reconnect, and soak in
+                        nature's beauty. 🌿✨</p>
                 </div>
             </div>
         </div>
@@ -870,7 +919,8 @@
                 <h2>The Experience</h2>
             </div>
             <div class="experience-content">
-                <p>At Samava Farms, we offer luxurious living blended with the charm of nature. Our three-floor villa is adorned with Moroccan-inspired interiors, making it an ideal location for photoshoots.</p>
+                <p>At Samava Farms, we offer luxurious living blended with the charm of nature. Our three-floor villa is
+                    adorned with Moroccan-inspired interiors, making it an ideal location for photoshoots.</p>
                 <div class="feature-cards">
                     <div class="feature-card">
                         <div class="feature-icon">🌬️</div>
@@ -920,7 +970,7 @@
                 <div class="room-card">
                     <img src="./f1.jpg" alt="Standard Room" class="room-img">
                     <div class="room-details">
-                        <h3 class="room-title">Standard Room</h3>
+                        <h3 class="room-title">Standard Room - Samava Farms – Hilltop Stay (12 km from Calicut)</h3>
                         <ul class="room-features">
                             <li>1 Double Bed or 2 Twin Beds</li>
                             <li>Two bedside tables, a desk, and a chair</li>
@@ -929,14 +979,16 @@
                             <li>Private balcony to enjoy the stunning mountain scenery</li>
                         </ul>
                         <div class="room-cta">
-                            <a href="https://api.whatsapp.com/send?phone=919744800088&text=im%20interested" class="btn">Book Now</a>
+                            <a href="https://api.whatsapp.com/send?phone=919745298193&text=im%20interested"
+                                class="btn">Book Now</a>
                         </div>
                     </div>
                 </div>
                 <div class="room-card">
                     <img src="./f2.jpg" alt="Moroccan-Inspired Bathroom" class="room-img">
                     <div class="room-details">
-                        <h3 class="room-title">Classic & Spacious Moroccan-Inspired Room</h3>
+                        <h3 class="room-title">Classic & Spacious Moroccan-Inspired Room - Samava Farms – Hilltop Stay
+                            (12 km from Calicut)</h3>
                         <ul class="room-features">
                             <li>Elegant Moroccan interiors with intricate details</li>
                             <li>Luxurious fixtures and premium toiletries</li>
@@ -944,7 +996,23 @@
                             <li>Timeless charm with modern conveniences</li>
                         </ul>
                         <div class="room-cta">
-                            <a href="https://api.whatsapp.com/send?phone=919744800088&text=im%20interested" class="btn">Book Now</a>
+                            <a href="https://api.whatsapp.com/send?phone=919745298193&text=im%20interested"
+                                class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <img src="./f3.jpg" alt="Mauj by Samava Farms" class="room-img">
+                    <div class="room-details">
+                        <h3 class="room-title">Mauj by Samava Farms – Calicut Beach</h3>
+                        <ul class="room-features">
+                            <li>A cozy two-room house right at Calicut Beach</li>
+                            <li>Perfect for families seeking a peaceful beachside retreat</li>
+                            <li>Ideal for solo travellers on short visits or longer stays</li>
+                        </ul>
+                        <div class="room-cta">
+                            <a href="https://api.whatsapp.com/send?phone=919745298193&text=im%20interested"
+                                class="btn">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -961,15 +1029,18 @@
             <div class="location-content">
                 <div class="location-item">
                     <div class="location-number">10 km</div>
-                    <p class="location-description">from Calicut town – A short and scenic drive from the heart of the city.</p>
+                    <p class="location-description">from Calicut town – A short and scenic drive from the heart of the
+                        city.</p>
                 </div>
                 <div class="location-item">
                     <div class="location-number">35 km</div>
-                    <p class="location-description">from Calicut International Airport – Easily accessible for domestic and international travelers.</p>
+                    <p class="location-description">from Calicut International Airport – Easily accessible for domestic
+                        and international travelers.</p>
                 </div>
                 <div class="location-item">
                     <div class="location-number">Perfect</div>
-                    <p class="location-description">for a quick getaway in Kerala – Whether you live nearby or are visiting.</p>
+                    <p class="location-description">for a quick getaway in Kerala – Whether you live nearby or are
+                        visiting.</p>
                 </div>
             </div>
         </div>
@@ -996,29 +1067,29 @@
                             <textarea id="message" class="form-control" required></textarea>
                         </div>
                     </form>
-                
+
                     <!-- WhatsApp CTA Button -->
                     <a id="whatsapp-link" href="#" class="whatsapp-cta">
                         <span class="whatsapp-icon">📱</span>
                         Send Message
                     </a>
                 </div>
-                
+
                 <script>
                     document.getElementById('whatsapp-link').addEventListener('click', function (event) {
                         event.preventDefault();
                         var name = encodeURIComponent(document.getElementById('name').value.trim());
                         var message = encodeURIComponent(document.getElementById('message').value.trim());
-                
+
                         if (name && message) {
-                            var whatsappURL = `https://api.whatsapp.com/send?phone=919744800088&text=Hello, my name is ${name}. ${message}`;
+                            var whatsappURL = `https://api.whatsapp.com/send?phone=919745298193&text=Hello, my name is ${name}. ${message}`;
                             window.location.href = whatsappURL;
                         } else {
                             alert("Please fill in both fields before sending.");
                         }
                     });
                 </script>
-                
+
                 <div class="contact-info">
                     <h3>Contact Information</h3>
                     <div class="contact-item">
@@ -1032,7 +1103,7 @@
                         <div class="contact-icon">📞</div>
                         <div>
                             <h4>Phone:</h4>
-                            <p>+91 97448 00088</p>
+                            <p>+91 97452 98193</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1046,7 +1117,8 @@
                         <div class="contact-icon">📱</div>
                         <div>
                             <h4>Instagram:</h4>
-                            <p><a href="https://www.instagram.com/samavafarms" target="_blank" style="color: var(--primary-color);">@samavafarms</a></p>
+                            <p><a href="https://www.instagram.com/samavafarms" target="_blank"
+                                    style="color: var(--primary-color);">@samavafarms</a></p>
                         </div>
                     </div>
                     <div class="business-hours">
@@ -1065,16 +1137,19 @@
             <div class="footer-container">
                 <div class="footer-brand">
                     <div class="footer-logo">Samava Farms</div>
-                    <p class="footer-description">A serene retreat in the hills of Calicut, offering peace and serenity. Nature's getaway.</p>
-                    
+                    <p class="footer-description">A serene retreat in the hills of Calicut, offering peace and serenity.
+                        Nature's getaway.</p>
+
                     <div class="footer-social">
                         <a href="https://www.instagram.com/samavafarms" class="social-icon" target="_blank">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="24" height="24">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+                                alt="Instagram Logo" width="24" height="24">
                         </a>
-                        <a href="https://api.whatsapp.com/send?phone=919744800088" class="social-icon" target="_blank">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" width="24" height="24">
+                        <a href="https://api.whatsapp.com/send?phone=919745298193" class="social-icon" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                                alt="WhatsApp Logo" width="24" height="24">
                         </a>
-                        <a href="tel:+919744800088" class="social-icon">
+                        <a href="tel:+919745298193" class="social-icon">
                             <span>📞</span>
                         </a>
                     </div>
